@@ -18,12 +18,28 @@ long nCr(int n, int r);
 
 int main() {
   int n, r;
-  std::cout << "Enter a value for n ";
+  std::cout << "Enter a value for n :";
   std::cin >> n;
-  std::cout << "Enter a value for r ";
+  std::cout << "Enter a value for r :";
   std::cin >> r;
   std::cout << "nCr = ";
   std::cout << nCr(n,r);
   std::cout << std::endl;
   return 0;
+}
+
+long factorial(int no)
+{
+  int i=1, fact = 1;
+  while(i<=no)
+  {
+    fact = i* fact;
+    i++;
+  }
+  return fact;
+}
+
+long nCr(int n, int r)
+{
+  return factorial(n) / (factorial(r) * factorial(n-r));
 }
